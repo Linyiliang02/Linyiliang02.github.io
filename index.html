@@ -7,57 +7,93 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
-  background:linear-gradient(180deg,#f5f3ff 0%,#eff6ff 35%,#ffffff 100%);
-  color:#1e293b; min-height:100vh; }
-header { text-align:center; padding:64px 20px 48px;
-  background:linear-gradient(160deg,#8b5cf6 0%,#a78bfa 38%,#93c5fd 70%,#dbeafe 100%);
-  color:#fff; position:relative; overflow:hidden; }
-header::after { content:""; position:absolute; left:0; right:0; bottom:0; height:24px;
-  background:linear-gradient(180deg,transparent,#f5f3ff); }
+  color:#1e293b; min-height:100vh; overflow-x:hidden;
+  background:
+    radial-gradient(1100px 700px at 12% -8%, rgba(167,139,250,.30), transparent 60%),
+    radial-gradient(900px 620px at 88% 6%, rgba(147,197,253,.32), transparent 55%),
+    radial-gradient(1000px 700px at 50% 108%, rgba(196,181,253,.22), transparent 60%),
+    linear-gradient(180deg,#f7f4ff 0%,#f1f5ff 45%,#ffffff 100%);
+  background-attachment:fixed; }
+/* 浮动光斑 */
+.glow { position:fixed; border-radius:50%; filter:blur(90px); opacity:.5; pointer-events:none; z-index:0; }
+.glow-a { width:420px; height:420px; left:-120px; top:15%; background:rgba(167,139,250,.55); animation:floatA 14s ease-in-out infinite; }
+.glow-b { width:380px; height:380px; right:-100px; top:45%; background:rgba(147,197,253,.6); animation:floatB 17s ease-in-out infinite; }
+.glow-c { width:300px; height:300px; left:30%; bottom:-120px; background:rgba(216,180,254,.45); animation:floatA 20s ease-in-out infinite reverse; }
+@keyframes floatA { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(40px,-30px) scale(1.08);} }
+@keyframes floatB { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-35px,25px) scale(1.1);} }
+
+/* 头部：紫蓝流动渐变 */
+header { text-align:center; padding:64px 20px 52px; color:#fff; position:relative; overflow:hidden;
+  background:linear-gradient(135deg,#8b5cf6 0%,#a78bfa 25%,#818cf8 50%,#60a5fa 75%,#a5b4fc 100%);
+  background-size:220% 220%; animation:gradFlow 14s ease infinite; }
+header::after { content:""; position:absolute; left:0; right:0; bottom:0; height:28px;
+  background:linear-gradient(180deg,transparent,rgba(247,244,255,.9)); }
+@keyframes gradFlow { 0%{background-position:0% 50%;} 50%{background-position:100% 50%;} 100%{background-position:0% 50%;} }
 .avatar { width:104px; height:104px; border-radius:50%; object-fit:cover;
-  border:3px solid rgba(255,255,255,.9); box-shadow:0 8px 24px rgba(124,58,237,.3);
-  margin-bottom:18px; }
-h1 { font-size:28px; letter-spacing:3px; font-weight:700; text-shadow:0 2px 8px rgba(124,58,237,.25); }
-.bio { color:rgba(255,255,255,.92); font-size:14px; margin-top:12px; line-height:1.9; }
-.badges { margin-top:18px; }
-.badge { display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
-  color:#fff; font-size:12px; padding:5px 14px; border-radius:20px; margin:0 4px; backdrop-filter:blur(4px); }
-main { max-width:1100px; margin:0 auto; padding:0 20px 60px; }
-.group { margin-top:48px; }
-.group h2 { font-size:17px; color:#6d28d9; display:flex; align-items:center; gap:10px;
-  font-weight:600; letter-spacing:1px; }
-.group h2::before { content:""; width:4px; height:18px; border-radius:2px;
+  border:3px solid rgba(255,255,255,.92); box-shadow:0 8px 28px rgba(124,58,237,.4);
+  margin-bottom:18px; animation:popIn .7s cubic-bezier(.2,.9,.3,1.3); transition:transform .4s,box-shadow .4s; }
+.avatar:hover { transform:scale(1.06) rotate(3deg); box-shadow:0 0 0 10px rgba(255,255,255,.18),0 10px 32px rgba(124,58,237,.5); }
+@keyframes popIn { 0%{opacity:0; transform:scale(.6) translateY(-14px);} 100%{opacity:1; transform:scale(1) translateY(0);} }
+h1 { font-size:30px; letter-spacing:3px; font-weight:800;
+  background:linear-gradient(90deg,#fff,#e0e7ff,#c7d2fe,#fff); background-size:200% auto;
+  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  animation:shine 5s linear infinite; filter:drop-shadow(0 2px 10px rgba(30,27,75,.35)); }
+@keyframes shine { to { background-position:200% center; } }
+.bio { color:rgba(255,255,255,.95); font-size:14px; margin-top:12px; line-height:1.9; text-shadow:0 1px 6px rgba(30,27,75,.25); }
+.badges { margin-top:20px; }
+.badge { display:inline-block; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.4);
+  color:#fff; font-size:12px; padding:5px 14px; border-radius:20px; margin:0 4px; backdrop-filter:blur(4px);
+  transition:transform .25s,background .25s; }
+.badge:hover { transform:translateY(-2px) scale(1.05); background:rgba(255,255,255,.3); }
+
+main { max-width:1100px; margin:0 auto; padding:0 20px 60px; position:relative; z-index:1; }
+.group { margin-top:52px; }
+.group h2 { font-size:17px; color:#6d28d9; display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:1px; }
+.group h2::before { content:""; width:5px; height:18px; border-radius:3px;
   background:linear-gradient(180deg,#8b5cf6,#93c5fd); }
 .group h2 .count { background:#ede9fe; color:#7c3aed; font-size:12px; padding:2px 10px; border-radius:12px; }
-.subgroup { margin-top:30px; }
+.subgroup { margin-top:32px; }
 .subgroup h3 { font-size:14px; color:#475569; display:flex; align-items:center; gap:8px; font-weight:600; }
 .subgroup h3 .count { background:#f1f5f9; color:#64748b; font-size:11px; padding:1px 8px; border-radius:10px; }
+
 /* 作品案例 */
-.cgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:24px; margin-top:18px; }
-.ccard { background:#fff; border-radius:16px; overflow:hidden; border:1px solid #e9e4fb;
-  box-shadow:0 4px 16px rgba(139,92,246,.08); transition:transform .2s,box-shadow .2s; }
-.ccard:hover { transform:translateY(-4px); box-shadow:0 12px 30px rgba(139,92,246,.16); }
+.cgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:26px; margin-top:20px; }
+.ccard { background:rgba(255,255,255,.92); backdrop-filter:blur(6px); border-radius:18px; overflow:hidden;
+  border:1px solid rgba(233,228,251,.9); box-shadow:0 6px 22px rgba(139,92,246,.10);
+  transition:transform .3s cubic-bezier(.2,.9,.3,1.2),box-shadow .3s; opacity:0; transform:translateY(24px);
+  animation:fadeUp .6s forwards; }
+.ccard:hover { transform:translateY(-6px); box-shadow:0 18px 44px rgba(139,92,246,.20); }
 .ccard video { width:100%; aspect-ratio:9/16; object-fit:cover; display:block; background:#0a0c10; }
 .cinfo { padding:14px 16px 18px; }
 .ctag { display:inline-block; background:linear-gradient(135deg,#8b5cf6,#60a5fa); color:#fff;
   font-size:11px; padding:2px 10px; border-radius:10px; margin-bottom:8px; }
-.cinfo h3 { font-size:15px; color:#6d28d9; font-weight:600; margin-bottom:6px; }
+.cinfo h3 { font-size:15px; color:#6d28d9; font-weight:700; margin-bottom:6px; }
 .cinfo p { font-size:13px; color:#64748b; line-height:1.75; }
+@keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+
 /* 封面画廊 */
 .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:16px; margin-top:14px; }
-.card { display:block; text-decoration:none; background:#fff; border-radius:14px; overflow:hidden;
-  border:1px solid #e9e4fb; box-shadow:0 3px 12px rgba(139,92,246,.06); transition:transform .2s,box-shadow .2s; position:relative; }
-.card:hover { transform:translateY(-3px); box-shadow:0 8px 22px rgba(139,92,246,.14); }
-.card img { width:100%; aspect-ratio:9/16; object-fit:cover; display:block; }
+.card { display:block; text-decoration:none; background:rgba(255,255,255,.94); border-radius:14px; overflow:hidden;
+  border:1px solid rgba(233,228,251,.95); box-shadow:0 4px 14px rgba(139,92,246,.07);
+  transition:transform .3s cubic-bezier(.2,.9,.3,1.2),box-shadow .3s; position:relative; }
+.card:hover { transform:translateY(-4px) scale(1.02); box-shadow:0 12px 30px rgba(139,92,246,.18); }
+.card img { width:100%; aspect-ratio:9/16; object-fit:cover; display:block; transition:transform .45s; }
+.card:hover img { transform:scale(1.06); }
 .card .title { display:block; color:#475569; font-size:12.5px; padding:8px 10px;
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.card .tag { position:absolute; top:8px; left:8px; background:rgba(139,92,246,.85); color:#fff;
-  font-size:11px; padding:2px 9px; border-radius:8px; }
-footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50px; }
+.card .tag { position:absolute; top:8px; left:8px; background:rgba(139,92,246,.88); color:#fff;
+  font-size:11px; padding:2px 9px; border-radius:8px; backdrop-filter:blur(2px); }
+
+/* 滚动入场 */
+.reveal { opacity:0; transform:translateY(26px); transition:opacity .7s ease,transform .7s ease; }
+.reveal.show { opacity:1; transform:translateY(0); }
+
+footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50px; position:relative; z-index:1; }
 @media (max-width:720px) { .cgrid { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
+<div class="glow glow-a"></div><div class="glow glow-b"></div><div class="glow glow-c"></div>
 <header>
   <img class="avatar" src="assets/avatar.jpg" alt="avatar">
   <h1>小林.ai.作品集</h1>
@@ -65,7 +101,7 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
   <div class="badges"><span class="badge">AI 视频</span><span class="badge">剧情创意</span><span class="badge">带货转化</span></div>
 </header>
 <main>
-<section class="group"><h2>作品案例<span class="count">6</span></h2><div class="cgrid"><div class="ccard">
+<section class="group"><h2>作品案例<span class="count">6</span></h2><div class="cgrid"><div class="ccard" style="animation-delay:0.0s">
           <video controls preload="none" playsinline poster="covers/8月7日草莓刀ai切五花肉衔接直播片段.jpg">
             <source src="videos/8月7日草莓刀ai切五花肉衔接直播片段.mp4" type="video/mp4">
           </video>
@@ -74,7 +110,7 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
             <h3>草莓刀 · 切五花肉虚实衔接</h3>
             <p>AI 生成刀切画面与真实直播带货的无缝衔接：白手套主播手持草莓刀，切出丝带般透光的薄肉片，自然过渡到实拍商品讲解。虚实之间，分不清哪一刀是 AI。</p>
           </div>
-        </div><div class="ccard">
+        </div><div class="ccard" style="animation-delay:0.08s">
           <video controls preload="none" playsinline poster="covers/复刻换人产品高清.jpg">
             <source src="videos/复刻换人产品高清.mp4" type="video/mp4">
           </video>
@@ -83,7 +119,7 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
             <h3>复刻爆款 · 换人换产品</h3>
             <p>复刻爆款视频框架，主角与产品全新替换：卡车当众倾倒整车菜刀如瀑布，少女随手取刀、当场斩断生排骨，节奏与冲击力原版复现。</p>
           </div>
-        </div><div class="ccard">
+        </div><div class="ccard" style="animation-delay:0.16s">
           <video controls preload="none" playsinline poster="covers/寒霜方刀切猪头剧情.jpg">
             <source src="videos/寒霜方刀切猪头剧情.mp4" type="video/mp4">
           </video>
@@ -92,7 +128,7 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
             <h3>寒霜方刀 · 菜市场劈猪头</h3>
             <p>菜市场现场：猫耳少女手起刀落，猪头一刀两半、切口平整，围观大爷大妈鼓掌喝彩。萌系外表与暴力斩切的反差，是全片最强记忆点。</p>
           </div>
-        </div><div class="ccard">
+        </div><div class="ccard" style="animation-delay:0.24s">
           <video controls preload="none" playsinline poster="covers/小菜切1剧情.jpg">
             <source src="videos/小菜切1剧情.mp4" type="video/mp4">
           </video>
@@ -101,7 +137,7 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
             <h3>小菜切 · 双人小剧情</h3>
             <p>猫耳少女与搭档一唱一和的厨房小剧场：展示、质疑、实测切肉，层层递进；刀刃上凝结水珠的特写镜头，把金属质感拍到了极致。</p>
           </div>
-        </div><div class="ccard">
+        </div><div class="ccard" style="animation-delay:0.32s">
           <video controls preload="none" playsinline poster="covers/流星斩切刀小剧情.jpg">
             <source src="videos/流星斩切刀小剧情.mp4" type="video/mp4">
           </video>
@@ -110,7 +146,7 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
             <h3>流星斩切刀 · 集装箱开场</h3>
             <p>工业级开场：集装箱凌空吊起，倾倒出海量黑色菜刀堆成小山，少女从刀山中取刀亮相，手持大筒骨准备斩骨演示。硬核工厂风拉满。</p>
           </div>
-        </div><div class="ccard">
+        </div><div class="ccard" style="animation-delay:0.4s">
           <video controls preload="none" playsinline poster="covers/草莓刀ai切烤乳猪衔接.jpg">
             <source src="videos/草莓刀ai切烤乳猪衔接.mp4" type="video/mp4">
           </video>
@@ -119,8 +155,7 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
             <h3>草莓刀 · 切烤乳猪虚实衔接</h3>
             <p>第二条虚实衔接代表作：AI 精准切开金黄酥脆的烤乳猪，刀锋特写与真实案板演示严丝合缝，紧接着薄纸片一刀两断，卖点一气呵成。</p>
           </div>
-        </div></div></section>
-<section class="group"><h2>作品库<span class="count">58</span></h2><section class="subgroup"><h3>寒霜方刀<span class="count">5</span></h3><div class="grid"><div class="card"><img loading="lazy" src="covers/刀妹方刀开头.jpg" alt="刀妹方刀开头">
+        </div></div></section><section class="group"><h2>作品库<span class="count">58</span></h2><section class="subgroup"><h3>寒霜方刀<span class="count">5</span></h3><div class="grid"><div class="card"><img loading="lazy" src="covers/刀妹方刀开头.jpg" alt="刀妹方刀开头">
               <span class="tag">寒霜方刀</span><span class="title">刀妹方刀开头</span></div><div class="card"><img loading="lazy" src="covers/方刀偷袭工厂切割.jpg" alt="方刀偷袭工厂切割">
               <span class="tag">寒霜方刀</span><span class="title">方刀偷袭工厂切割</span></div><div class="card"><img loading="lazy" src="covers/方刀切割猪脚+袋子.jpg" alt="方刀切割猪脚+袋子">
               <span class="tag">寒霜方刀</span><span class="title">方刀切割猪脚+袋子</span></div><div class="card"><img loading="lazy" src="covers/方刀磨刀+淬火.jpg" alt="方刀磨刀+淬火">
@@ -178,8 +213,7 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
               <span class="tag">综合</span><span class="title">生成这把刀切割各种素材的“爽感”视频</span></div><div class="card"><img loading="lazy" src="covers/视频复刻与道具替换.jpg" alt="视频复刻与道具替换">
               <span class="tag">综合</span><span class="title">视频复刻与道具替换</span></div><div class="card"><img loading="lazy" src="covers/视频复刻（换刀+改台词）.jpg" alt="视频复刻（换刀+改台词）">
               <span class="tag">综合</span><span class="title">视频复刻（换刀+改台词）</span></div><div class="card"><img loading="lazy" src="covers/让图片动起来变成视频，动作模仿视频的动作语气，_秒.jpg" alt="让图片动起来变成视频，动作模仿视频的动作语气，_秒">
-              <span class="tag">综合</span><span class="title">让图片动起来变成视频，动作模仿视频的动作语气，_秒</span></div></div></section></section>
-<section class="group"><h2>素材库<span class="count">22</span></h2><div class="grid"><a class="card" href="assets/产品-不锈钢刀.jpg" target="_blank">
+              <span class="tag">综合</span><span class="title">让图片动起来变成视频，动作模仿视频的动作语气，_秒</span></div></div></section></section><section class="group"><h2>素材库<span class="count">22</span></h2><div class="grid"><a class="card" href="assets/产品-不锈钢刀.jpg" target="_blank">
           <img loading="lazy" src="assets/产品-不锈钢刀.jpg" alt="不锈钢刀.jpg">
           <span class="tag">产品素材</span>
           <span class="title">不锈钢刀</span>
@@ -270,5 +304,12 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
         </a></div></section>
 </main>
 <footer>Powered by GitHub Pages · 作品持续更新中</footer>
+<script>
+// 滚动入场
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
+},{threshold:0.08});
+document.querySelectorAll('.group,.subgroup,.ccard,.card').forEach(el=>{ el.classList.add('reveal'); io.observe(el); });
+</script>
 </body>
 </html>
