@@ -129,6 +129,10 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
   .casezone { margin:0 -14px; padding:36px 14px 10px; border-radius:28px 28px 0 0; }
   .group { margin-top:40px; }
   .group h2 { font-size:15.5px; }
+  /* 手机端：所有内容直接可见（不依赖滚动动画），视频限高压缩案例区 */
+  .reveal { opacity:1 !important; transform:none !important; }
+  .ccard video { max-height:60vh; aspect-ratio:auto; }
+  .details.fold { margin-top:40px; }
   * { -webkit-tap-highlight-color:transparent; }
   .card:active { transform:scale(.97); }   /* 触屏点击反馈 */
 }
@@ -357,11 +361,16 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
 </main>
 <footer>Powered by GitHub Pages · 作品持续更新中</footer>
 <script>
-// 滚动入场
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
-},{threshold:0.08});
-document.querySelectorAll('.group,.subgroup,.ccard,.card').forEach(el=>{ el.classList.add('reveal'); io.observe(el); });
+// 滚动入场（不支持 IntersectionObserver 时全部直接显示）
+const revealEls = document.querySelectorAll('.group,.subgroup,.ccard,.card');
+if (!('IntersectionObserver' in window)) {
+  revealEls.forEach(el=>el.classList.add('show'));
+} else {
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
+  },{threshold:0.08});
+  revealEls.forEach(el=>{ el.classList.add('reveal'); io.observe(el); });
+}
 // 滚动时头部内容渐隐（背景淡化过渡）
 const hdr = document.querySelector('header');
 window.addEventListener('scroll', ()=>{
