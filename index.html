@@ -83,6 +83,17 @@ details.fold[open] summary .arrow { transform:rotate(180deg); }
 details.fold .grid { margin-top:16px; }
 details.fold[open] .grid { animation:fadeUp .5s ease; }
 
+/* 作品库：刀型分组可折叠（默认收起） */
+details.fold-sub { margin-top:26px; }
+details.fold-sub summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:8px; user-select:none; }
+details.fold-sub summary::-webkit-details-marker { display:none; }
+details.fold-sub summary h3 { font-size:14px; color:#475569; display:flex; align-items:center; gap:8px; font-weight:600; margin:0; }
+details.fold-sub summary h3 .count { background:#f1f5f9; color:#64748b; font-size:11px; padding:1px 8px; border-radius:10px; }
+details.fold-sub summary .arrow { width:16px; height:16px; color:#94a3b8; transition:transform .3s; }
+details.fold-sub[open] summary .arrow { transform:rotate(180deg); }
+details.fold-sub .grid { margin-top:14px; }
+details.fold-sub[open] .grid { animation:fadeUp .4s ease; }
+
 /* 作品案例 */
 .cgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:20px; }
 .ccard { background:rgba(255,255,255,.92); backdrop-filter:blur(6px); border-radius:18px; overflow:hidden;
@@ -213,7 +224,10 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
           </div>
         </div></div></div></section>
 <main>
-<section class="group"><h2>作品库<span class="count">63</span></h2><section class="subgroup"><h3>寒霜方刀<span class="count">6</span></h3><div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/刀妹方刀开头.jpg">
+<section class="group"><h2>作品库<span class="count">63</span></h2><details class="fold-sub">
+          <summary><h3>寒霜方刀<span class="count">6</span></h3>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/刀妹方刀开头.jpg">
               <source src="videos/刀妹方刀开头.mp4" type="video/mp4"></video>
               <span class="tag">寒霜方刀</span><span class="title">刀妹方刀开头</span></div><div class="card"><video controls preload="none" playsinline poster="covers/寒霜方刀切猪头剧情.jpg">
               <source src="videos/寒霜方刀切猪头剧情.mp4" type="video/mp4"></video>
@@ -225,7 +239,10 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
               <source src="videos/方刀磨刀+淬火.mp4" type="video/mp4"></video>
               <span class="tag">寒霜方刀</span><span class="title">方刀磨刀+淬火</span></div><div class="card"><video controls preload="none" playsinline poster="covers/方刀豆包.jpg">
               <source src="videos/方刀豆包.mp4" type="video/mp4"></video>
-              <span class="tag">寒霜方刀</span><span class="title">方刀豆包</span></div></div></section><section class="subgroup"><h3>小菜切<span class="count">12</span></h3><div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/8月5日小菜切对比.jpg">
+              <span class="tag">寒霜方刀</span><span class="title">方刀豆包</span></div></div></details><details class="fold-sub">
+          <summary><h3>小菜切<span class="count">12</span></h3>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/8月5日小菜切对比.jpg">
               <source src="videos/8月5日小菜切对比.mp4" type="video/mp4"></video>
               <span class="tag">小菜切</span><span class="title">8月5日小菜切对比</span></div><div class="card"><video controls preload="none" playsinline poster="covers/偷袭工厂小菜切.jpg">
               <source src="videos/偷袭工厂小菜切.mp4" type="video/mp4"></video>
@@ -249,7 +266,10 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
               <source src="videos/小菜切结尾.mp4" type="video/mp4"></video>
               <span class="tag">小菜切</span><span class="title">小菜切结尾</span></div><div class="card"><video controls preload="none" playsinline poster="covers/被水淹小菜切.jpg">
               <source src="videos/被水淹小菜切.mp4" type="video/mp4"></video>
-              <span class="tag">小菜切</span><span class="title">被水淹小菜切</span></div></div></section><section class="subgroup"><h3>草莓刀<span class="count">10</span></h3><div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/8月7日草莓刀ai切五花肉衔接直播片段.jpg">
+              <span class="tag">小菜切</span><span class="title">被水淹小菜切</span></div></div></details><details class="fold-sub">
+          <summary><h3>草莓刀<span class="count">10</span></h3>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/8月7日草莓刀ai切五花肉衔接直播片段.jpg">
               <source src="videos/8月7日草莓刀ai切五花肉衔接直播片段.mp4" type="video/mp4"></video>
               <span class="tag">草莓刀</span><span class="title">8月7日草莓刀ai切五花肉衔接直播片段</span></div><div class="card"><video controls preload="none" playsinline poster="covers/8月7日草莓刀ai切大棒骨衔接直播.jpg">
               <source src="videos/8月7日草莓刀ai切大棒骨衔接直播.mp4" type="video/mp4"></video>
@@ -269,7 +289,10 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
               <source src="videos/草莓刀展示空镜头.mp4" type="video/mp4"></video>
               <span class="tag">草莓刀</span><span class="title">草莓刀展示空镜头</span></div><div class="card"><video controls preload="none" playsinline poster="covers/草莓展示空镜头.jpg">
               <source src="videos/草莓展示空镜头.mp4" type="video/mp4"></video>
-              <span class="tag">草莓刀</span><span class="title">草莓展示空镜头</span></div></div></section><section class="subgroup"><h3>武士刀<span class="count">10</span></h3><div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/倩倩白手柄武士刀切五花肉.jpg">
+              <span class="tag">草莓刀</span><span class="title">草莓展示空镜头</span></div></div></details><details class="fold-sub">
+          <summary><h3>武士刀<span class="count">10</span></h3>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/倩倩白手柄武士刀切五花肉.jpg">
               <source src="videos/倩倩白手柄武士刀切五花肉.mp4" type="video/mp4"></video>
               <span class="tag">武士刀</span><span class="title">倩倩白手柄武士刀切五花肉</span></div><div class="card"><video controls preload="none" playsinline poster="covers/光明白色武士刀切割五花肉.jpg">
               <source src="videos/光明白色武士刀切割五花肉.mp4" type="video/mp4"></video>
@@ -289,7 +312,10 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
               <source src="videos/白色武士刀割葱.mp4" type="video/mp4"></video>
               <span class="tag">武士刀</span><span class="title">白色武士刀割葱</span></div><div class="card"><video controls preload="none" playsinline poster="covers/豆包白手柄割肉.jpg">
               <source src="videos/豆包白手柄割肉.mp4" type="video/mp4"></video>
-              <span class="tag">武士刀</span><span class="title">豆包白手柄割肉</span></div></div></section><section class="subgroup"><h3>流星斩切刀<span class="count">4</span></h3><div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/流星刀不粘刀.jpg">
+              <span class="tag">武士刀</span><span class="title">豆包白手柄割肉</span></div></div></details><details class="fold-sub">
+          <summary><h3>流星斩切刀<span class="count">4</span></h3>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/流星刀不粘刀.jpg">
               <source src="videos/流星刀不粘刀.mp4" type="video/mp4"></video>
               <span class="tag">流星斩切刀</span><span class="title">流星刀不粘刀</span></div><div class="card"><video controls preload="none" playsinline poster="covers/流星刀切水面袋子.jpg">
               <source src="videos/流星刀切水面袋子.mp4" type="video/mp4"></video>
@@ -297,7 +323,10 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
               <source src="videos/流星斩切1.mp4" type="video/mp4"></video>
               <span class="tag">流星斩切刀</span><span class="title">流星斩切1</span></div><div class="card"><video controls preload="none" playsinline poster="covers/流星斩切刀小剧情.jpg">
               <source src="videos/流星斩切刀小剧情.mp4" type="video/mp4"></video>
-              <span class="tag">流星斩切刀</span><span class="title">流星斩切刀小剧情</span></div></div></section><section class="subgroup"><h3>梳葱刀<span class="count">4</span></h3><div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/何泉利切五花肉.jpg">
+              <span class="tag">流星斩切刀</span><span class="title">流星斩切刀小剧情</span></div></div></details><details class="fold-sub">
+          <summary><h3>梳葱刀<span class="count">4</span></h3>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/何泉利切五花肉.jpg">
               <source src="videos/何泉利切五花肉.mp4" type="video/mp4"></video>
               <span class="tag">梳葱刀</span><span class="title">何泉利切五花肉</span></div><div class="card"><video controls preload="none" playsinline poster="covers/何泉利梳葱刀.jpg">
               <source src="videos/何泉利梳葱刀.mp4" type="video/mp4"></video>
@@ -305,7 +334,10 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
               <source src="videos/梳葱刀切割.mp4" type="video/mp4"></video>
               <span class="tag">梳葱刀</span><span class="title">梳葱刀切割</span></div><div class="card"><video controls preload="none" playsinline poster="covers/梳葱刀切割2.jpg">
               <source src="videos/梳葱刀切割2.mp4" type="video/mp4"></video>
-              <span class="tag">梳葱刀</span><span class="title">梳葱刀切割2</span></div></div></section><section class="subgroup"><h3>其他刀具<span class="count">5</span></h3><div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/不锈钢刀，会沾刀.jpg">
+              <span class="tag">梳葱刀</span><span class="title">梳葱刀切割2</span></div></div></details><details class="fold-sub">
+          <summary><h3>其他刀具<span class="count">5</span></h3>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/不锈钢刀，会沾刀.jpg">
               <source src="videos/不锈钢刀，会沾刀.mp4" type="video/mp4"></video>
               <span class="tag">其他刀具</span><span class="title">不锈钢刀，会沾刀</span></div><div class="card"><video controls preload="none" playsinline poster="covers/炮弹钢开头.jpg">
               <source src="videos/炮弹钢开头.mp4" type="video/mp4"></video>
@@ -315,7 +347,10 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
               <source src="videos/被水淹鸡骨剪.mp4" type="video/mp4"></video>
               <span class="tag">其他刀具</span><span class="title">被水淹鸡骨剪</span></div><div class="card"><video controls preload="none" playsinline poster="covers/陶瓷刀容易碎.jpg">
               <source src="videos/陶瓷刀容易碎.mp4" type="video/mp4"></video>
-              <span class="tag">其他刀具</span><span class="title">陶瓷刀容易碎</span></div></div></section><section class="subgroup"><h3>综合创作<span class="count">12</span></h3><div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/8月12日 (1).jpg">
+              <span class="tag">其他刀具</span><span class="title">陶瓷刀容易碎</span></div></div></details><details class="fold-sub">
+          <summary><h3>综合创作<span class="count">12</span></h3>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/8月12日 (1).jpg">
               <source src="videos/8月12日 (1).mp4" type="video/mp4"></video>
               <span class="tag">综合</span><span class="title">8月12日 (1)</span></div><div class="card"><video controls preload="none" playsinline poster="covers/8月3日(2).jpg">
               <source src="videos/8月3日(2).mp4" type="video/mp4"></video>
@@ -339,7 +374,7 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
               <source src="videos/视频复刻（换刀+改台词）.mp4" type="video/mp4"></video>
               <span class="tag">综合</span><span class="title">视频复刻（换刀+改台词）</span></div><div class="card"><video controls preload="none" playsinline poster="covers/让图片动起来变成视频，动作模仿视频的动作语气，_秒.jpg">
               <source src="videos/让图片动起来变成视频，动作模仿视频的动作语气，_秒.mp4" type="video/mp4"></video>
-              <span class="tag">综合</span><span class="title">让图片动起来变成视频，动作模仿视频的动作语气，_秒</span></div></div></section></section><details class="fold">
+              <span class="tag">综合</span><span class="title">让图片动起来变成视频，动作模仿视频的动作语气，_秒</span></div></div></details></section><details class="fold">
       <summary><h2>素材集<span class="count">22</span></h2>
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
       <div class="grid"><a class="card" href="assets/产品-不锈钢刀.jpg" target="_blank">
