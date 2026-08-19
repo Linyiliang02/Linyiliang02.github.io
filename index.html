@@ -121,6 +121,15 @@ details.fold-sub[open] .grid { animation:fadeUp .4s ease; }
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .card .tag { position:absolute; top:8px; left:8px; background:rgba(139,92,246,.88); color:#fff;
   font-size:11px; padding:2px 9px; border-radius:8px; backdrop-filter:blur(2px); }
+/* 播放按钮（视频库封面） */
+.playbtn { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:44px; height:44px; background:rgba(139,92,246,.88); border-radius:50%; color:#fff;
+  font-size:16px; display:flex; align-items:center; justify-content:center; padding-left:3px;
+  box-shadow:0 4px 14px rgba(0,0,0,.28); transition:transform .25s,background .25s; pointer-events:none; }
+.card:hover .playbtn { transform:translate(-50%,-50%) scale(1.14); background:rgba(124,58,237,.95); }
+.video-card { cursor:pointer; }
+.video-card video { width:100%; aspect-ratio:9/16; object-fit:cover; display:block; background:#0a0c10; }
+.card:active .playbtn { transform:translate(-50%,-50%) scale(.95); }
 
 /* 滚动入场 */
 .reveal { opacity:0; transform:translateY(26px); transition:opacity .7s ease,transform .7s ease; }
@@ -169,7 +178,7 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
 <section class="casezone"><div class="caseinner">
       <h2>作品案例<span class="count">6</span></h2>
       <div class="cgrid"><div class="ccard" style="animation-delay:0.0s">
-          <video controls preload="none" playsinline poster="covers/小菜切1剧情.jpg">
+          <video controls preload="none" playsinline poster="covers/小菜切1剧情.webp">
             <source src="videos/小菜切1剧情.mp4" type="video/mp4">
           </video>
           <div class="cinfo">
@@ -178,7 +187,7 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
             <p>猫耳少女与搭档一唱一和的厨房小剧场：展示、质疑、实测切肉，层层递进；刀刃上凝结水珠的特写镜头，把金属质感拍到了极致。</p>
           </div>
         </div><div class="ccard" style="animation-delay:0.08s">
-          <video controls preload="none" playsinline poster="covers/复刻换人产品高清.jpg">
+          <video controls preload="none" playsinline poster="covers/复刻换人产品高清.webp">
             <source src="videos/复刻换人产品高清.mp4" type="video/mp4">
           </video>
           <div class="cinfo">
@@ -187,7 +196,7 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
             <p>复刻爆款视频框架，主角与产品全新替换：卡车当众倾倒整车菜刀如瀑布，少女随手取刀、当场斩断生排骨，节奏与冲击力原版复现。</p>
           </div>
         </div><div class="ccard" style="animation-delay:0.16s">
-          <video controls preload="none" playsinline poster="covers/寒霜方刀切猪头剧情.jpg">
+          <video controls preload="none" playsinline poster="covers/寒霜方刀切猪头剧情.webp">
             <source src="videos/寒霜方刀切猪头剧情.mp4" type="video/mp4">
           </video>
           <div class="cinfo">
@@ -196,7 +205,7 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
             <p>菜市场现场：猫耳少女手起刀落，猪头一刀两半、切口平整，围观大爷大妈鼓掌喝彩。萌系外表与暴力斩切的反差，是全片最强记忆点。</p>
           </div>
         </div><div class="ccard" style="animation-delay:0.24s">
-          <video controls preload="none" playsinline poster="covers/流星斩切刀小剧情.jpg">
+          <video controls preload="none" playsinline poster="covers/流星斩切刀小剧情.webp">
             <source src="videos/流星斩切刀小剧情.mp4" type="video/mp4">
           </video>
           <div class="cinfo">
@@ -205,7 +214,7 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
             <p>工业级开场：集装箱凌空吊起，倾倒出海量黑色菜刀堆成小山，少女从刀山中取刀亮相，手持大筒骨准备斩骨演示。硬核工厂风拉满。</p>
           </div>
         </div><div class="ccard" style="animation-delay:0.32s">
-          <video controls preload="none" playsinline poster="covers/8月7日草莓刀ai切五花肉衔接直播片段.jpg">
+          <video controls preload="none" playsinline poster="covers/8月7日草莓刀ai切五花肉衔接直播片段.webp">
             <source src="videos/8月7日草莓刀ai切五花肉衔接直播片段.mp4" type="video/mp4">
           </video>
           <div class="cinfo">
@@ -214,7 +223,7 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
             <p>AI 生成刀切画面与真实直播带货的无缝衔接：白手套主播手持草莓刀，切出丝带般透光的薄肉片，自然过渡到实拍商品讲解。虚实之间，分不清哪一刀是 AI。</p>
           </div>
         </div><div class="ccard" style="animation-delay:0.4s">
-          <video controls preload="none" playsinline poster="covers/草莓刀ai切烤乳猪衔接.jpg">
+          <video controls preload="none" playsinline poster="covers/草莓刀ai切烤乳猪衔接.webp">
             <source src="videos/草莓刀ai切烤乳猪衔接.mp4" type="video/mp4">
           </video>
           <div class="cinfo">
@@ -227,242 +236,305 @@ footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50p
 <section class="group"><h2>作品库<span class="count">63</span></h2><details class="fold-sub">
           <summary><h3>寒霜方刀<span class="count">6</span></h3>
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-          <div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/刀妹方刀开头.jpg">
-              <source src="videos/刀妹方刀开头.mp4" type="video/mp4"></video>
-              <span class="tag">寒霜方刀</span><span class="title">刀妹方刀开头</span></div><div class="card"><video controls preload="none" playsinline poster="covers/寒霜方刀切猪头剧情.jpg">
-              <source src="videos/寒霜方刀切猪头剧情.mp4" type="video/mp4"></video>
-              <span class="tag">寒霜方刀</span><span class="title">寒霜方刀切猪头剧情</span></div><div class="card"><video controls preload="none" playsinline poster="covers/方刀偷袭工厂切割.jpg">
-              <source src="videos/方刀偷袭工厂切割.mp4" type="video/mp4"></video>
-              <span class="tag">寒霜方刀</span><span class="title">方刀偷袭工厂切割</span></div><div class="card"><video controls preload="none" playsinline poster="covers/方刀切割猪脚+袋子.jpg">
-              <source src="videos/方刀切割猪脚+袋子.mp4" type="video/mp4"></video>
-              <span class="tag">寒霜方刀</span><span class="title">方刀切割猪脚+袋子</span></div><div class="card"><video controls preload="none" playsinline poster="covers/方刀磨刀+淬火.jpg">
-              <source src="videos/方刀磨刀+淬火.mp4" type="video/mp4"></video>
-              <span class="tag">寒霜方刀</span><span class="title">方刀磨刀+淬火</span></div><div class="card"><video controls preload="none" playsinline poster="covers/方刀豆包.jpg">
-              <source src="videos/方刀豆包.mp4" type="video/mp4"></video>
+          <div class="grid"><div class="card video-card" data-video="videos/刀妹方刀开头.mp4" data-poster="covers/刀妹方刀开头.jpg">
+              <img loading="lazy" src="covers/刀妹方刀开头.webp" alt="刀妹方刀开头">
+              <span class="playbtn">▶</span>
+              <span class="tag">寒霜方刀</span><span class="title">刀妹方刀开头</span></div><div class="card video-card" data-video="videos/寒霜方刀切猪头剧情.mp4" data-poster="covers/寒霜方刀切猪头剧情.jpg">
+              <img loading="lazy" src="covers/寒霜方刀切猪头剧情.webp" alt="寒霜方刀切猪头剧情">
+              <span class="playbtn">▶</span>
+              <span class="tag">寒霜方刀</span><span class="title">寒霜方刀切猪头剧情</span></div><div class="card video-card" data-video="videos/方刀偷袭工厂切割.mp4" data-poster="covers/方刀偷袭工厂切割.jpg">
+              <img loading="lazy" src="covers/方刀偷袭工厂切割.webp" alt="方刀偷袭工厂切割">
+              <span class="playbtn">▶</span>
+              <span class="tag">寒霜方刀</span><span class="title">方刀偷袭工厂切割</span></div><div class="card video-card" data-video="videos/方刀切割猪脚+袋子.mp4" data-poster="covers/方刀切割猪脚+袋子.jpg">
+              <img loading="lazy" src="covers/方刀切割猪脚+袋子.webp" alt="方刀切割猪脚+袋子">
+              <span class="playbtn">▶</span>
+              <span class="tag">寒霜方刀</span><span class="title">方刀切割猪脚+袋子</span></div><div class="card video-card" data-video="videos/方刀磨刀+淬火.mp4" data-poster="covers/方刀磨刀+淬火.jpg">
+              <img loading="lazy" src="covers/方刀磨刀+淬火.webp" alt="方刀磨刀+淬火">
+              <span class="playbtn">▶</span>
+              <span class="tag">寒霜方刀</span><span class="title">方刀磨刀+淬火</span></div><div class="card video-card" data-video="videos/方刀豆包.mp4" data-poster="covers/方刀豆包.jpg">
+              <img loading="lazy" src="covers/方刀豆包.webp" alt="方刀豆包">
+              <span class="playbtn">▶</span>
               <span class="tag">寒霜方刀</span><span class="title">方刀豆包</span></div></div></details><details class="fold-sub">
           <summary><h3>小菜切<span class="count">12</span></h3>
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-          <div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/8月5日小菜切对比.jpg">
-              <source src="videos/8月5日小菜切对比.mp4" type="video/mp4"></video>
-              <span class="tag">小菜切</span><span class="title">8月5日小菜切对比</span></div><div class="card"><video controls preload="none" playsinline poster="covers/偷袭工厂小菜切.jpg">
-              <source src="videos/偷袭工厂小菜切.mp4" type="video/mp4"></video>
-              <span class="tag">小菜切</span><span class="title">偷袭工厂小菜切</span></div><div class="card"><video controls preload="none" playsinline poster="covers/小菜切1剧情.jpg">
-              <source src="videos/小菜切1剧情.mp4" type="video/mp4"></video>
-              <span class="tag">小菜切</span><span class="title">小菜切1剧情</span></div><div class="card"><video controls preload="none" playsinline poster="covers/小菜切2剧情.jpg">
-              <source src="videos/小菜切2剧情.mp4" type="video/mp4"></video>
-              <span class="tag">小菜切</span><span class="title">小菜切2剧情</span></div><div class="card"><video controls preload="none" playsinline poster="covers/小菜切切五花肉.jpg">
-              <source src="videos/小菜切切五花肉.mp4" type="video/mp4"></video>
-              <span class="tag">小菜切</span><span class="title">小菜切切五花肉</span></div><div class="card"><video controls preload="none" playsinline poster="covers/小菜切切鞋垫.jpg">
-              <source src="videos/小菜切切鞋垫.mp4" type="video/mp4"></video>
-              <span class="tag">小菜切</span><span class="title">小菜切切鞋垫</span></div><div class="card"><video controls preload="none" playsinline poster="covers/小菜切大爷大妈抢.jpg">
-              <source src="videos/小菜切大爷大妈抢.mp4" type="video/mp4"></video>
-              <span class="tag">小菜切</span><span class="title">小菜切大爷大妈抢</span></div><div class="card"><video controls preload="none" playsinline poster="covers/小菜切小剧情.jpg">
-              <source src="videos/小菜切小剧情.mp4" type="video/mp4"></video>
-              <span class="tag">小菜切</span><span class="title">小菜切小剧情</span></div><div class="card"><video controls preload="none" playsinline poster="covers/小菜切小剧情3.jpg">
-              <source src="videos/小菜切小剧情3.mp4" type="video/mp4"></video>
-              <span class="tag">小菜切</span><span class="title">小菜切小剧情3</span></div><div class="card"><video controls preload="none" playsinline poster="covers/小菜切空镜头.jpg">
-              <source src="videos/小菜切空镜头.mp4" type="video/mp4"></video>
-              <span class="tag">小菜切</span><span class="title">小菜切空镜头</span></div><div class="card"><video controls preload="none" playsinline poster="covers/小菜切结尾.jpg">
-              <source src="videos/小菜切结尾.mp4" type="video/mp4"></video>
-              <span class="tag">小菜切</span><span class="title">小菜切结尾</span></div><div class="card"><video controls preload="none" playsinline poster="covers/被水淹小菜切.jpg">
-              <source src="videos/被水淹小菜切.mp4" type="video/mp4"></video>
+          <div class="grid"><div class="card video-card" data-video="videos/8月5日小菜切对比.mp4" data-poster="covers/8月5日小菜切对比.jpg">
+              <img loading="lazy" src="covers/8月5日小菜切对比.webp" alt="8月5日小菜切对比">
+              <span class="playbtn">▶</span>
+              <span class="tag">小菜切</span><span class="title">8月5日小菜切对比</span></div><div class="card video-card" data-video="videos/偷袭工厂小菜切.mp4" data-poster="covers/偷袭工厂小菜切.jpg">
+              <img loading="lazy" src="covers/偷袭工厂小菜切.webp" alt="偷袭工厂小菜切">
+              <span class="playbtn">▶</span>
+              <span class="tag">小菜切</span><span class="title">偷袭工厂小菜切</span></div><div class="card video-card" data-video="videos/小菜切1剧情.mp4" data-poster="covers/小菜切1剧情.jpg">
+              <img loading="lazy" src="covers/小菜切1剧情.webp" alt="小菜切1剧情">
+              <span class="playbtn">▶</span>
+              <span class="tag">小菜切</span><span class="title">小菜切1剧情</span></div><div class="card video-card" data-video="videos/小菜切2剧情.mp4" data-poster="covers/小菜切2剧情.jpg">
+              <img loading="lazy" src="covers/小菜切2剧情.webp" alt="小菜切2剧情">
+              <span class="playbtn">▶</span>
+              <span class="tag">小菜切</span><span class="title">小菜切2剧情</span></div><div class="card video-card" data-video="videos/小菜切切五花肉.mp4" data-poster="covers/小菜切切五花肉.jpg">
+              <img loading="lazy" src="covers/小菜切切五花肉.webp" alt="小菜切切五花肉">
+              <span class="playbtn">▶</span>
+              <span class="tag">小菜切</span><span class="title">小菜切切五花肉</span></div><div class="card video-card" data-video="videos/小菜切切鞋垫.mp4" data-poster="covers/小菜切切鞋垫.jpg">
+              <img loading="lazy" src="covers/小菜切切鞋垫.webp" alt="小菜切切鞋垫">
+              <span class="playbtn">▶</span>
+              <span class="tag">小菜切</span><span class="title">小菜切切鞋垫</span></div><div class="card video-card" data-video="videos/小菜切大爷大妈抢.mp4" data-poster="covers/小菜切大爷大妈抢.jpg">
+              <img loading="lazy" src="covers/小菜切大爷大妈抢.webp" alt="小菜切大爷大妈抢">
+              <span class="playbtn">▶</span>
+              <span class="tag">小菜切</span><span class="title">小菜切大爷大妈抢</span></div><div class="card video-card" data-video="videos/小菜切小剧情.mp4" data-poster="covers/小菜切小剧情.jpg">
+              <img loading="lazy" src="covers/小菜切小剧情.webp" alt="小菜切小剧情">
+              <span class="playbtn">▶</span>
+              <span class="tag">小菜切</span><span class="title">小菜切小剧情</span></div><div class="card video-card" data-video="videos/小菜切小剧情3.mp4" data-poster="covers/小菜切小剧情3.jpg">
+              <img loading="lazy" src="covers/小菜切小剧情3.webp" alt="小菜切小剧情3">
+              <span class="playbtn">▶</span>
+              <span class="tag">小菜切</span><span class="title">小菜切小剧情3</span></div><div class="card video-card" data-video="videos/小菜切空镜头.mp4" data-poster="covers/小菜切空镜头.jpg">
+              <img loading="lazy" src="covers/小菜切空镜头.webp" alt="小菜切空镜头">
+              <span class="playbtn">▶</span>
+              <span class="tag">小菜切</span><span class="title">小菜切空镜头</span></div><div class="card video-card" data-video="videos/小菜切结尾.mp4" data-poster="covers/小菜切结尾.jpg">
+              <img loading="lazy" src="covers/小菜切结尾.webp" alt="小菜切结尾">
+              <span class="playbtn">▶</span>
+              <span class="tag">小菜切</span><span class="title">小菜切结尾</span></div><div class="card video-card" data-video="videos/被水淹小菜切.mp4" data-poster="covers/被水淹小菜切.jpg">
+              <img loading="lazy" src="covers/被水淹小菜切.webp" alt="被水淹小菜切">
+              <span class="playbtn">▶</span>
               <span class="tag">小菜切</span><span class="title">被水淹小菜切</span></div></div></details><details class="fold-sub">
           <summary><h3>草莓刀<span class="count">10</span></h3>
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-          <div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/8月7日草莓刀ai切五花肉衔接直播片段.jpg">
-              <source src="videos/8月7日草莓刀ai切五花肉衔接直播片段.mp4" type="video/mp4"></video>
-              <span class="tag">草莓刀</span><span class="title">8月7日草莓刀ai切五花肉衔接直播片段</span></div><div class="card"><video controls preload="none" playsinline poster="covers/8月7日草莓刀ai切大棒骨衔接直播.jpg">
-              <source src="videos/8月7日草莓刀ai切大棒骨衔接直播.mp4" type="video/mp4"></video>
-              <span class="tag">草莓刀</span><span class="title">8月7日草莓刀ai切大棒骨衔接直播</span></div><div class="card"><video controls preload="none" playsinline poster="covers/8月8日 草莓切猪头衔接.jpg">
-              <source src="videos/8月8日 草莓切猪头衔接.mp4" type="video/mp4"></video>
-              <span class="tag">草莓刀</span><span class="title">8月8日 草莓切猪头衔接</span></div><div class="card"><video controls preload="none" playsinline poster="covers/刀妹偷袭草莓切割.jpg">
-              <source src="videos/刀妹偷袭草莓切割.mp4" type="video/mp4"></video>
-              <span class="tag">草莓刀</span><span class="title">刀妹偷袭草莓切割</span></div><div class="card"><video controls preload="none" playsinline poster="covers/草莓刀ai切烤乳猪衔接.jpg">
-              <source src="videos/草莓刀ai切烤乳猪衔接.mp4" type="video/mp4"></video>
-              <span class="tag">草莓刀</span><span class="title">草莓刀ai切烤乳猪衔接</span></div><div class="card"><video controls preload="none" playsinline poster="covers/草莓刀不粘刀.jpg">
-              <source src="videos/草莓刀不粘刀.mp4" type="video/mp4"></video>
-              <span class="tag">草莓刀</span><span class="title">草莓刀不粘刀</span></div><div class="card"><video controls preload="none" playsinline poster="covers/草莓刀切五花肉.jpg">
-              <source src="videos/草莓刀切五花肉.mp4" type="video/mp4"></video>
-              <span class="tag">草莓刀</span><span class="title">草莓刀切五花肉</span></div><div class="card"><video controls preload="none" playsinline poster="covers/草莓刀切水面袋子.jpg">
-              <source src="videos/草莓刀切水面袋子.mp4" type="video/mp4"></video>
-              <span class="tag">草莓刀</span><span class="title">草莓刀切水面袋子</span></div><div class="card"><video controls preload="none" playsinline poster="covers/草莓刀展示空镜头.jpg">
-              <source src="videos/草莓刀展示空镜头.mp4" type="video/mp4"></video>
-              <span class="tag">草莓刀</span><span class="title">草莓刀展示空镜头</span></div><div class="card"><video controls preload="none" playsinline poster="covers/草莓展示空镜头.jpg">
-              <source src="videos/草莓展示空镜头.mp4" type="video/mp4"></video>
+          <div class="grid"><div class="card video-card" data-video="videos/8月7日草莓刀ai切五花肉衔接直播片段.mp4" data-poster="covers/8月7日草莓刀ai切五花肉衔接直播片段.jpg">
+              <img loading="lazy" src="covers/8月7日草莓刀ai切五花肉衔接直播片段.webp" alt="8月7日草莓刀ai切五花肉衔接直播片段">
+              <span class="playbtn">▶</span>
+              <span class="tag">草莓刀</span><span class="title">8月7日草莓刀ai切五花肉衔接直播片段</span></div><div class="card video-card" data-video="videos/8月7日草莓刀ai切大棒骨衔接直播.mp4" data-poster="covers/8月7日草莓刀ai切大棒骨衔接直播.jpg">
+              <img loading="lazy" src="covers/8月7日草莓刀ai切大棒骨衔接直播.webp" alt="8月7日草莓刀ai切大棒骨衔接直播">
+              <span class="playbtn">▶</span>
+              <span class="tag">草莓刀</span><span class="title">8月7日草莓刀ai切大棒骨衔接直播</span></div><div class="card video-card" data-video="videos/8月8日 草莓切猪头衔接.mp4" data-poster="covers/8月8日 草莓切猪头衔接.jpg">
+              <img loading="lazy" src="covers/8月8日 草莓切猪头衔接.webp" alt="8月8日 草莓切猪头衔接">
+              <span class="playbtn">▶</span>
+              <span class="tag">草莓刀</span><span class="title">8月8日 草莓切猪头衔接</span></div><div class="card video-card" data-video="videos/刀妹偷袭草莓切割.mp4" data-poster="covers/刀妹偷袭草莓切割.jpg">
+              <img loading="lazy" src="covers/刀妹偷袭草莓切割.webp" alt="刀妹偷袭草莓切割">
+              <span class="playbtn">▶</span>
+              <span class="tag">草莓刀</span><span class="title">刀妹偷袭草莓切割</span></div><div class="card video-card" data-video="videos/草莓刀ai切烤乳猪衔接.mp4" data-poster="covers/草莓刀ai切烤乳猪衔接.jpg">
+              <img loading="lazy" src="covers/草莓刀ai切烤乳猪衔接.webp" alt="草莓刀ai切烤乳猪衔接">
+              <span class="playbtn">▶</span>
+              <span class="tag">草莓刀</span><span class="title">草莓刀ai切烤乳猪衔接</span></div><div class="card video-card" data-video="videos/草莓刀不粘刀.mp4" data-poster="covers/草莓刀不粘刀.jpg">
+              <img loading="lazy" src="covers/草莓刀不粘刀.webp" alt="草莓刀不粘刀">
+              <span class="playbtn">▶</span>
+              <span class="tag">草莓刀</span><span class="title">草莓刀不粘刀</span></div><div class="card video-card" data-video="videos/草莓刀切五花肉.mp4" data-poster="covers/草莓刀切五花肉.jpg">
+              <img loading="lazy" src="covers/草莓刀切五花肉.webp" alt="草莓刀切五花肉">
+              <span class="playbtn">▶</span>
+              <span class="tag">草莓刀</span><span class="title">草莓刀切五花肉</span></div><div class="card video-card" data-video="videos/草莓刀切水面袋子.mp4" data-poster="covers/草莓刀切水面袋子.jpg">
+              <img loading="lazy" src="covers/草莓刀切水面袋子.webp" alt="草莓刀切水面袋子">
+              <span class="playbtn">▶</span>
+              <span class="tag">草莓刀</span><span class="title">草莓刀切水面袋子</span></div><div class="card video-card" data-video="videos/草莓刀展示空镜头.mp4" data-poster="covers/草莓刀展示空镜头.jpg">
+              <img loading="lazy" src="covers/草莓刀展示空镜头.webp" alt="草莓刀展示空镜头">
+              <span class="playbtn">▶</span>
+              <span class="tag">草莓刀</span><span class="title">草莓刀展示空镜头</span></div><div class="card video-card" data-video="videos/草莓展示空镜头.mp4" data-poster="covers/草莓展示空镜头.jpg">
+              <img loading="lazy" src="covers/草莓展示空镜头.webp" alt="草莓展示空镜头">
+              <span class="playbtn">▶</span>
               <span class="tag">草莓刀</span><span class="title">草莓展示空镜头</span></div></div></details><details class="fold-sub">
           <summary><h3>武士刀<span class="count">10</span></h3>
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-          <div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/倩倩白手柄武士刀切五花肉.jpg">
-              <source src="videos/倩倩白手柄武士刀切五花肉.mp4" type="video/mp4"></video>
-              <span class="tag">武士刀</span><span class="title">倩倩白手柄武士刀切五花肉</span></div><div class="card"><video controls preload="none" playsinline poster="covers/光明白色武士刀切割五花肉.jpg">
-              <source src="videos/光明白色武士刀切割五花肉.mp4" type="video/mp4"></video>
-              <span class="tag">武士刀</span><span class="title">光明白色武士刀切割五花肉</span></div><div class="card"><video controls preload="none" playsinline poster="covers/刀妹偷袭白手柄武士刀切割.jpg">
-              <source src="videos/刀妹偷袭白手柄武士刀切割.mp4" type="video/mp4"></video>
-              <span class="tag">武士刀</span><span class="title">刀妹偷袭白手柄武士刀切割</span></div><div class="card"><video controls preload="none" playsinline poster="covers/刀妹偷袭白手柄武士刀完整.jpg">
-              <source src="videos/刀妹偷袭白手柄武士刀完整.mp4" type="video/mp4"></video>
-              <span class="tag">武士刀</span><span class="title">刀妹偷袭白手柄武士刀完整</span></div><div class="card"><video controls preload="none" playsinline poster="covers/木手柄武士刀切五花肉.jpg">
-              <source src="videos/木手柄武士刀切五花肉.mp4" type="video/mp4"></video>
-              <span class="tag">武士刀</span><span class="title">木手柄武士刀切五花肉</span></div><div class="card"><video controls preload="none" playsinline poster="covers/白手柄武士刀切五花肉衔接.jpg">
-              <source src="videos/白手柄武士刀切五花肉衔接.mp4" type="video/mp4"></video>
-              <span class="tag">武士刀</span><span class="title">白手柄武士刀切五花肉衔接</span></div><div class="card"><video controls preload="none" playsinline poster="covers/白手柄武士刀切猪肉开头.jpg">
-              <source src="videos/白手柄武士刀切猪肉开头.mp4" type="video/mp4"></video>
-              <span class="tag">武士刀</span><span class="title">白手柄武士刀切猪肉开头</span></div><div class="card"><video controls preload="none" playsinline poster="covers/白手柄武士刀喷生锈剂不生锈.jpg">
-              <source src="videos/白手柄武士刀喷生锈剂不生锈.mp4" type="video/mp4"></video>
-              <span class="tag">武士刀</span><span class="title">白手柄武士刀喷生锈剂不生锈</span></div><div class="card"><video controls preload="none" playsinline poster="covers/白色武士刀割葱.jpg">
-              <source src="videos/白色武士刀割葱.mp4" type="video/mp4"></video>
-              <span class="tag">武士刀</span><span class="title">白色武士刀割葱</span></div><div class="card"><video controls preload="none" playsinline poster="covers/豆包白手柄割肉.jpg">
-              <source src="videos/豆包白手柄割肉.mp4" type="video/mp4"></video>
+          <div class="grid"><div class="card video-card" data-video="videos/倩倩白手柄武士刀切五花肉.mp4" data-poster="covers/倩倩白手柄武士刀切五花肉.jpg">
+              <img loading="lazy" src="covers/倩倩白手柄武士刀切五花肉.webp" alt="倩倩白手柄武士刀切五花肉">
+              <span class="playbtn">▶</span>
+              <span class="tag">武士刀</span><span class="title">倩倩白手柄武士刀切五花肉</span></div><div class="card video-card" data-video="videos/光明白色武士刀切割五花肉.mp4" data-poster="covers/光明白色武士刀切割五花肉.jpg">
+              <img loading="lazy" src="covers/光明白色武士刀切割五花肉.webp" alt="光明白色武士刀切割五花肉">
+              <span class="playbtn">▶</span>
+              <span class="tag">武士刀</span><span class="title">光明白色武士刀切割五花肉</span></div><div class="card video-card" data-video="videos/刀妹偷袭白手柄武士刀切割.mp4" data-poster="covers/刀妹偷袭白手柄武士刀切割.jpg">
+              <img loading="lazy" src="covers/刀妹偷袭白手柄武士刀切割.webp" alt="刀妹偷袭白手柄武士刀切割">
+              <span class="playbtn">▶</span>
+              <span class="tag">武士刀</span><span class="title">刀妹偷袭白手柄武士刀切割</span></div><div class="card video-card" data-video="videos/刀妹偷袭白手柄武士刀完整.mp4" data-poster="covers/刀妹偷袭白手柄武士刀完整.jpg">
+              <img loading="lazy" src="covers/刀妹偷袭白手柄武士刀完整.webp" alt="刀妹偷袭白手柄武士刀完整">
+              <span class="playbtn">▶</span>
+              <span class="tag">武士刀</span><span class="title">刀妹偷袭白手柄武士刀完整</span></div><div class="card video-card" data-video="videos/木手柄武士刀切五花肉.mp4" data-poster="covers/木手柄武士刀切五花肉.jpg">
+              <img loading="lazy" src="covers/木手柄武士刀切五花肉.webp" alt="木手柄武士刀切五花肉">
+              <span class="playbtn">▶</span>
+              <span class="tag">武士刀</span><span class="title">木手柄武士刀切五花肉</span></div><div class="card video-card" data-video="videos/白手柄武士刀切五花肉衔接.mp4" data-poster="covers/白手柄武士刀切五花肉衔接.jpg">
+              <img loading="lazy" src="covers/白手柄武士刀切五花肉衔接.webp" alt="白手柄武士刀切五花肉衔接">
+              <span class="playbtn">▶</span>
+              <span class="tag">武士刀</span><span class="title">白手柄武士刀切五花肉衔接</span></div><div class="card video-card" data-video="videos/白手柄武士刀切猪肉开头.mp4" data-poster="covers/白手柄武士刀切猪肉开头.jpg">
+              <img loading="lazy" src="covers/白手柄武士刀切猪肉开头.webp" alt="白手柄武士刀切猪肉开头">
+              <span class="playbtn">▶</span>
+              <span class="tag">武士刀</span><span class="title">白手柄武士刀切猪肉开头</span></div><div class="card video-card" data-video="videos/白手柄武士刀喷生锈剂不生锈.mp4" data-poster="covers/白手柄武士刀喷生锈剂不生锈.jpg">
+              <img loading="lazy" src="covers/白手柄武士刀喷生锈剂不生锈.webp" alt="白手柄武士刀喷生锈剂不生锈">
+              <span class="playbtn">▶</span>
+              <span class="tag">武士刀</span><span class="title">白手柄武士刀喷生锈剂不生锈</span></div><div class="card video-card" data-video="videos/白色武士刀割葱.mp4" data-poster="covers/白色武士刀割葱.jpg">
+              <img loading="lazy" src="covers/白色武士刀割葱.webp" alt="白色武士刀割葱">
+              <span class="playbtn">▶</span>
+              <span class="tag">武士刀</span><span class="title">白色武士刀割葱</span></div><div class="card video-card" data-video="videos/豆包白手柄割肉.mp4" data-poster="covers/豆包白手柄割肉.jpg">
+              <img loading="lazy" src="covers/豆包白手柄割肉.webp" alt="豆包白手柄割肉">
+              <span class="playbtn">▶</span>
               <span class="tag">武士刀</span><span class="title">豆包白手柄割肉</span></div></div></details><details class="fold-sub">
           <summary><h3>流星斩切刀<span class="count">4</span></h3>
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-          <div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/流星刀不粘刀.jpg">
-              <source src="videos/流星刀不粘刀.mp4" type="video/mp4"></video>
-              <span class="tag">流星斩切刀</span><span class="title">流星刀不粘刀</span></div><div class="card"><video controls preload="none" playsinline poster="covers/流星刀切水面袋子.jpg">
-              <source src="videos/流星刀切水面袋子.mp4" type="video/mp4"></video>
-              <span class="tag">流星斩切刀</span><span class="title">流星刀切水面袋子</span></div><div class="card"><video controls preload="none" playsinline poster="covers/流星斩切1.jpg">
-              <source src="videos/流星斩切1.mp4" type="video/mp4"></video>
-              <span class="tag">流星斩切刀</span><span class="title">流星斩切1</span></div><div class="card"><video controls preload="none" playsinline poster="covers/流星斩切刀小剧情.jpg">
-              <source src="videos/流星斩切刀小剧情.mp4" type="video/mp4"></video>
+          <div class="grid"><div class="card video-card" data-video="videos/流星刀不粘刀.mp4" data-poster="covers/流星刀不粘刀.jpg">
+              <img loading="lazy" src="covers/流星刀不粘刀.webp" alt="流星刀不粘刀">
+              <span class="playbtn">▶</span>
+              <span class="tag">流星斩切刀</span><span class="title">流星刀不粘刀</span></div><div class="card video-card" data-video="videos/流星刀切水面袋子.mp4" data-poster="covers/流星刀切水面袋子.jpg">
+              <img loading="lazy" src="covers/流星刀切水面袋子.webp" alt="流星刀切水面袋子">
+              <span class="playbtn">▶</span>
+              <span class="tag">流星斩切刀</span><span class="title">流星刀切水面袋子</span></div><div class="card video-card" data-video="videos/流星斩切1.mp4" data-poster="covers/流星斩切1.jpg">
+              <img loading="lazy" src="covers/流星斩切1.webp" alt="流星斩切1">
+              <span class="playbtn">▶</span>
+              <span class="tag">流星斩切刀</span><span class="title">流星斩切1</span></div><div class="card video-card" data-video="videos/流星斩切刀小剧情.mp4" data-poster="covers/流星斩切刀小剧情.jpg">
+              <img loading="lazy" src="covers/流星斩切刀小剧情.webp" alt="流星斩切刀小剧情">
+              <span class="playbtn">▶</span>
               <span class="tag">流星斩切刀</span><span class="title">流星斩切刀小剧情</span></div></div></details><details class="fold-sub">
           <summary><h3>梳葱刀<span class="count">4</span></h3>
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-          <div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/何泉利切五花肉.jpg">
-              <source src="videos/何泉利切五花肉.mp4" type="video/mp4"></video>
-              <span class="tag">梳葱刀</span><span class="title">何泉利切五花肉</span></div><div class="card"><video controls preload="none" playsinline poster="covers/何泉利梳葱刀.jpg">
-              <source src="videos/何泉利梳葱刀.mp4" type="video/mp4"></video>
-              <span class="tag">梳葱刀</span><span class="title">何泉利梳葱刀</span></div><div class="card"><video controls preload="none" playsinline poster="covers/梳葱刀切割.jpg">
-              <source src="videos/梳葱刀切割.mp4" type="video/mp4"></video>
-              <span class="tag">梳葱刀</span><span class="title">梳葱刀切割</span></div><div class="card"><video controls preload="none" playsinline poster="covers/梳葱刀切割2.jpg">
-              <source src="videos/梳葱刀切割2.mp4" type="video/mp4"></video>
+          <div class="grid"><div class="card video-card" data-video="videos/何泉利切五花肉.mp4" data-poster="covers/何泉利切五花肉.jpg">
+              <img loading="lazy" src="covers/何泉利切五花肉.webp" alt="何泉利切五花肉">
+              <span class="playbtn">▶</span>
+              <span class="tag">梳葱刀</span><span class="title">何泉利切五花肉</span></div><div class="card video-card" data-video="videos/何泉利梳葱刀.mp4" data-poster="covers/何泉利梳葱刀.jpg">
+              <img loading="lazy" src="covers/何泉利梳葱刀.webp" alt="何泉利梳葱刀">
+              <span class="playbtn">▶</span>
+              <span class="tag">梳葱刀</span><span class="title">何泉利梳葱刀</span></div><div class="card video-card" data-video="videos/梳葱刀切割.mp4" data-poster="covers/梳葱刀切割.jpg">
+              <img loading="lazy" src="covers/梳葱刀切割.webp" alt="梳葱刀切割">
+              <span class="playbtn">▶</span>
+              <span class="tag">梳葱刀</span><span class="title">梳葱刀切割</span></div><div class="card video-card" data-video="videos/梳葱刀切割2.mp4" data-poster="covers/梳葱刀切割2.jpg">
+              <img loading="lazy" src="covers/梳葱刀切割2.webp" alt="梳葱刀切割2">
+              <span class="playbtn">▶</span>
               <span class="tag">梳葱刀</span><span class="title">梳葱刀切割2</span></div></div></details><details class="fold-sub">
           <summary><h3>其他刀具<span class="count">5</span></h3>
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-          <div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/不锈钢刀，会沾刀.jpg">
-              <source src="videos/不锈钢刀，会沾刀.mp4" type="video/mp4"></video>
-              <span class="tag">其他刀具</span><span class="title">不锈钢刀，会沾刀</span></div><div class="card"><video controls preload="none" playsinline poster="covers/炮弹钢开头.jpg">
-              <source src="videos/炮弹钢开头.mp4" type="video/mp4"></video>
-              <span class="tag">其他刀具</span><span class="title">炮弹钢开头</span></div><div class="card"><video controls preload="none" playsinline poster="covers/碳钢刀会生锈.jpg">
-              <source src="videos/碳钢刀会生锈.mp4" type="video/mp4"></video>
-              <span class="tag">其他刀具</span><span class="title">碳钢刀会生锈</span></div><div class="card"><video controls preload="none" playsinline poster="covers/被水淹鸡骨剪.jpg">
-              <source src="videos/被水淹鸡骨剪.mp4" type="video/mp4"></video>
-              <span class="tag">其他刀具</span><span class="title">被水淹鸡骨剪</span></div><div class="card"><video controls preload="none" playsinline poster="covers/陶瓷刀容易碎.jpg">
-              <source src="videos/陶瓷刀容易碎.mp4" type="video/mp4"></video>
+          <div class="grid"><div class="card video-card" data-video="videos/不锈钢刀，会沾刀.mp4" data-poster="covers/不锈钢刀，会沾刀.jpg">
+              <img loading="lazy" src="covers/不锈钢刀，会沾刀.webp" alt="不锈钢刀，会沾刀">
+              <span class="playbtn">▶</span>
+              <span class="tag">其他刀具</span><span class="title">不锈钢刀，会沾刀</span></div><div class="card video-card" data-video="videos/炮弹钢开头.mp4" data-poster="covers/炮弹钢开头.jpg">
+              <img loading="lazy" src="covers/炮弹钢开头.webp" alt="炮弹钢开头">
+              <span class="playbtn">▶</span>
+              <span class="tag">其他刀具</span><span class="title">炮弹钢开头</span></div><div class="card video-card" data-video="videos/碳钢刀会生锈.mp4" data-poster="covers/碳钢刀会生锈.jpg">
+              <img loading="lazy" src="covers/碳钢刀会生锈.webp" alt="碳钢刀会生锈">
+              <span class="playbtn">▶</span>
+              <span class="tag">其他刀具</span><span class="title">碳钢刀会生锈</span></div><div class="card video-card" data-video="videos/被水淹鸡骨剪.mp4" data-poster="covers/被水淹鸡骨剪.jpg">
+              <img loading="lazy" src="covers/被水淹鸡骨剪.webp" alt="被水淹鸡骨剪">
+              <span class="playbtn">▶</span>
+              <span class="tag">其他刀具</span><span class="title">被水淹鸡骨剪</span></div><div class="card video-card" data-video="videos/陶瓷刀容易碎.mp4" data-poster="covers/陶瓷刀容易碎.jpg">
+              <img loading="lazy" src="covers/陶瓷刀容易碎.webp" alt="陶瓷刀容易碎">
+              <span class="playbtn">▶</span>
               <span class="tag">其他刀具</span><span class="title">陶瓷刀容易碎</span></div></div></details><details class="fold-sub">
           <summary><h3>综合创作<span class="count">12</span></h3>
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-          <div class="grid"><div class="card"><video controls preload="none" playsinline poster="covers/8月12日 (1).jpg">
-              <source src="videos/8月12日 (1).mp4" type="video/mp4"></video>
-              <span class="tag">综合</span><span class="title">8月12日 (1)</span></div><div class="card"><video controls preload="none" playsinline poster="covers/8月3日(2).jpg">
-              <source src="videos/8月3日(2).mp4" type="video/mp4"></video>
-              <span class="tag">综合</span><span class="title">8月3日(2)</span></div><div class="card"><video controls preload="none" playsinline poster="covers/刀妹偷袭菜刀工厂.jpg">
-              <source src="videos/刀妹偷袭菜刀工厂.mp4" type="video/mp4"></video>
-              <span class="tag">综合</span><span class="title">刀妹偷袭菜刀工厂</span></div><div class="card"><video controls preload="none" playsinline poster="covers/刀妹偷袭菜刀工厂更新版.jpg">
-              <source src="videos/刀妹偷袭菜刀工厂更新版.mp4" type="video/mp4"></video>
-              <span class="tag">综合</span><span class="title">刀妹偷袭菜刀工厂更新版</span></div><div class="card"><video controls preload="none" playsinline poster="covers/场景视频.jpg">
-              <source src="videos/场景视频.mp4" type="video/mp4"></video>
-              <span class="tag">综合</span><span class="title">场景视频</span></div><div class="card"><video controls preload="none" playsinline poster="covers/复刻换人产品高清.jpg">
-              <source src="videos/复刻换人产品高清.mp4" type="video/mp4"></video>
-              <span class="tag">综合</span><span class="title">复刻换人产品高清</span></div><div class="card"><video controls preload="none" playsinline poster="covers/微信视频2026-08-11_152141_772.jpg">
-              <source src="videos/微信视频2026-08-11_152141_772.mp4" type="video/mp4"></video>
-              <span class="tag">综合</span><span class="title">微信视频2026-08-11_152141_772</span></div><div class="card"><video controls preload="none" playsinline poster="covers/生成这个的产品宣传视频.jpg">
-              <source src="videos/生成这个的产品宣传视频.mp4" type="video/mp4"></video>
-              <span class="tag">综合</span><span class="title">生成这个的产品宣传视频</span></div><div class="card"><video controls preload="none" playsinline poster="covers/生成这把刀切割各种素材的“爽感”视频.jpg">
-              <source src="videos/生成这把刀切割各种素材的“爽感”视频.mp4" type="video/mp4"></video>
-              <span class="tag">综合</span><span class="title">生成这把刀切割各种素材的“爽感”视频</span></div><div class="card"><video controls preload="none" playsinline poster="covers/视频复刻与道具替换.jpg">
-              <source src="videos/视频复刻与道具替换.mp4" type="video/mp4"></video>
-              <span class="tag">综合</span><span class="title">视频复刻与道具替换</span></div><div class="card"><video controls preload="none" playsinline poster="covers/视频复刻（换刀+改台词）.jpg">
-              <source src="videos/视频复刻（换刀+改台词）.mp4" type="video/mp4"></video>
-              <span class="tag">综合</span><span class="title">视频复刻（换刀+改台词）</span></div><div class="card"><video controls preload="none" playsinline poster="covers/让图片动起来变成视频，动作模仿视频的动作语气，_秒.jpg">
-              <source src="videos/让图片动起来变成视频，动作模仿视频的动作语气，_秒.mp4" type="video/mp4"></video>
+          <div class="grid"><div class="card video-card" data-video="videos/8月12日 (1).mp4" data-poster="covers/8月12日 (1).jpg">
+              <img loading="lazy" src="covers/8月12日 (1).webp" alt="8月12日 (1)">
+              <span class="playbtn">▶</span>
+              <span class="tag">综合</span><span class="title">8月12日 (1)</span></div><div class="card video-card" data-video="videos/8月3日(2).mp4" data-poster="covers/8月3日(2).jpg">
+              <img loading="lazy" src="covers/8月3日(2).webp" alt="8月3日(2)">
+              <span class="playbtn">▶</span>
+              <span class="tag">综合</span><span class="title">8月3日(2)</span></div><div class="card video-card" data-video="videos/刀妹偷袭菜刀工厂.mp4" data-poster="covers/刀妹偷袭菜刀工厂.jpg">
+              <img loading="lazy" src="covers/刀妹偷袭菜刀工厂.webp" alt="刀妹偷袭菜刀工厂">
+              <span class="playbtn">▶</span>
+              <span class="tag">综合</span><span class="title">刀妹偷袭菜刀工厂</span></div><div class="card video-card" data-video="videos/刀妹偷袭菜刀工厂更新版.mp4" data-poster="covers/刀妹偷袭菜刀工厂更新版.jpg">
+              <img loading="lazy" src="covers/刀妹偷袭菜刀工厂更新版.webp" alt="刀妹偷袭菜刀工厂更新版">
+              <span class="playbtn">▶</span>
+              <span class="tag">综合</span><span class="title">刀妹偷袭菜刀工厂更新版</span></div><div class="card video-card" data-video="videos/场景视频.mp4" data-poster="covers/场景视频.jpg">
+              <img loading="lazy" src="covers/场景视频.webp" alt="场景视频">
+              <span class="playbtn">▶</span>
+              <span class="tag">综合</span><span class="title">场景视频</span></div><div class="card video-card" data-video="videos/复刻换人产品高清.mp4" data-poster="covers/复刻换人产品高清.jpg">
+              <img loading="lazy" src="covers/复刻换人产品高清.webp" alt="复刻换人产品高清">
+              <span class="playbtn">▶</span>
+              <span class="tag">综合</span><span class="title">复刻换人产品高清</span></div><div class="card video-card" data-video="videos/微信视频2026-08-11_152141_772.mp4" data-poster="covers/微信视频2026-08-11_152141_772.jpg">
+              <img loading="lazy" src="covers/微信视频2026-08-11_152141_772.webp" alt="微信视频2026-08-11_152141_772">
+              <span class="playbtn">▶</span>
+              <span class="tag">综合</span><span class="title">微信视频2026-08-11_152141_772</span></div><div class="card video-card" data-video="videos/生成这个的产品宣传视频.mp4" data-poster="covers/生成这个的产品宣传视频.jpg">
+              <img loading="lazy" src="covers/生成这个的产品宣传视频.webp" alt="生成这个的产品宣传视频">
+              <span class="playbtn">▶</span>
+              <span class="tag">综合</span><span class="title">生成这个的产品宣传视频</span></div><div class="card video-card" data-video="videos/生成这把刀切割各种素材的“爽感”视频.mp4" data-poster="covers/生成这把刀切割各种素材的“爽感”视频.jpg">
+              <img loading="lazy" src="covers/生成这把刀切割各种素材的“爽感”视频.webp" alt="生成这把刀切割各种素材的“爽感”视频">
+              <span class="playbtn">▶</span>
+              <span class="tag">综合</span><span class="title">生成这把刀切割各种素材的“爽感”视频</span></div><div class="card video-card" data-video="videos/视频复刻与道具替换.mp4" data-poster="covers/视频复刻与道具替换.jpg">
+              <img loading="lazy" src="covers/视频复刻与道具替换.webp" alt="视频复刻与道具替换">
+              <span class="playbtn">▶</span>
+              <span class="tag">综合</span><span class="title">视频复刻与道具替换</span></div><div class="card video-card" data-video="videos/视频复刻（换刀+改台词）.mp4" data-poster="covers/视频复刻（换刀+改台词）.jpg">
+              <img loading="lazy" src="covers/视频复刻（换刀+改台词）.webp" alt="视频复刻（换刀+改台词）">
+              <span class="playbtn">▶</span>
+              <span class="tag">综合</span><span class="title">视频复刻（换刀+改台词）</span></div><div class="card video-card" data-video="videos/让图片动起来变成视频，动作模仿视频的动作语气，_秒.mp4" data-poster="covers/让图片动起来变成视频，动作模仿视频的动作语气，_秒.jpg">
+              <img loading="lazy" src="covers/让图片动起来变成视频，动作模仿视频的动作语气，_秒.webp" alt="让图片动起来变成视频，动作模仿视频的动作语气，_秒">
+              <span class="playbtn">▶</span>
               <span class="tag">综合</span><span class="title">让图片动起来变成视频，动作模仿视频的动作语气，_秒</span></div></div></details></section><details class="fold">
       <summary><h2>素材集<span class="count">22</span></h2>
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
       <div class="grid"><a class="card" href="assets/产品-不锈钢刀.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-不锈钢刀.jpg" alt="不锈钢刀.jpg">
+          <img loading="lazy" src="assets/产品-不锈钢刀.webp" alt="不锈钢刀.jpg">
           <span class="tag">产品素材</span>
           <span class="title">不锈钢刀</span>
         </a><a class="card" href="assets/产品-五花肉.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-五花肉.jpg" alt="五花肉.jpg">
+          <img loading="lazy" src="assets/产品-五花肉.webp" alt="五花肉.jpg">
           <span class="tag">产品素材</span>
           <span class="title">五花肉</span>
         </a><a class="card" href="assets/产品-何全利斩切刀.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-何全利斩切刀.jpg" alt="何全利斩切刀.jpg">
+          <img loading="lazy" src="assets/产品-何全利斩切刀.webp" alt="何全利斩切刀.jpg">
           <span class="tag">产品素材</span>
           <span class="title">何全利斩切刀</span>
         </a><a class="card" href="assets/产品-寒霜方刀19.9.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-寒霜方刀19.9.jpg" alt="寒霜方刀19.9.jpg">
+          <img loading="lazy" src="assets/产品-寒霜方刀19.9.webp" alt="寒霜方刀19.9.jpg">
           <span class="tag">产品素材</span>
           <span class="title">寒霜方刀19.9</span>
         </a><a class="card" href="assets/产品-小菜切39.9.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-小菜切39.9.jpg" alt="小菜切39.9.jpg">
+          <img loading="lazy" src="assets/产品-小菜切39.9.webp" alt="小菜切39.9.jpg">
           <span class="tag">产品素材</span>
           <span class="title">小菜切39.9</span>
         </a><a class="card" href="assets/产品-拉法斯木色手柄武士刀29.9.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-拉法斯木色手柄武士刀29.9.jpg" alt="拉法斯木色手柄武士刀29.9.jpg">
+          <img loading="lazy" src="assets/产品-拉法斯木色手柄武士刀29.9.webp" alt="拉法斯木色手柄武士刀29.9.jpg">
           <span class="tag">产品素材</span>
           <span class="title">拉法斯木色手柄武士刀29.9</span>
         </a><a class="card" href="assets/产品-拉法斯流星斩切刀19.9.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-拉法斯流星斩切刀19.9.jpg" alt="拉法斯流星斩切刀19.9.jpg">
+          <img loading="lazy" src="assets/产品-拉法斯流星斩切刀19.9.webp" alt="拉法斯流星斩切刀19.9.jpg">
           <span class="tag">产品素材</span>
           <span class="title">拉法斯流星斩切刀19.9</span>
         </a><a class="card" href="assets/产品-拉法斯白色手柄武士刀29.9.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-拉法斯白色手柄武士刀29.9.jpg" alt="拉法斯白色手柄武士刀29.9.jpg">
+          <img loading="lazy" src="assets/产品-拉法斯白色手柄武士刀29.9.webp" alt="拉法斯白色手柄武士刀29.9.jpg">
           <span class="tag">产品素材</span>
           <span class="title">拉法斯白色手柄武士刀29.9</span>
         </a><a class="card" href="assets/产品-拉法斯草莓刀12.8.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-拉法斯草莓刀12.8.jpg" alt="拉法斯草莓刀12.8.jpg">
+          <img loading="lazy" src="assets/产品-拉法斯草莓刀12.8.webp" alt="拉法斯草莓刀12.8.jpg">
           <span class="tag">产品素材</span>
           <span class="title">拉法斯草莓刀12.8</span>
         </a><a class="card" href="assets/产品-排骨.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-排骨.jpg" alt="排骨.jpg">
+          <img loading="lazy" src="assets/产品-排骨.webp" alt="排骨.jpg">
           <span class="tag">产品素材</span>
           <span class="title">排骨</span>
         </a><a class="card" href="assets/产品-梳葱刀.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-梳葱刀.jpg" alt="梳葱刀.jpg">
+          <img loading="lazy" src="assets/产品-梳葱刀.webp" alt="梳葱刀.jpg">
           <span class="tag">产品素材</span>
           <span class="title">梳葱刀</span>
         </a><a class="card" href="assets/产品-烤乳猪.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-烤乳猪.jpg" alt="烤乳猪.jpg">
+          <img loading="lazy" src="assets/产品-烤乳猪.webp" alt="烤乳猪.jpg">
           <span class="tag">产品素材</span>
           <span class="title">烤乳猪</span>
         </a><a class="card" href="assets/产品-猪蹄.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-猪蹄.jpg" alt="猪蹄.jpg">
+          <img loading="lazy" src="assets/产品-猪蹄.webp" alt="猪蹄.jpg">
           <span class="tag">产品素材</span>
           <span class="title">猪蹄</span>
         </a><a class="card" href="assets/产品-生锈剂.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-生锈剂.jpg" alt="生锈剂.jpg">
+          <img loading="lazy" src="assets/产品-生锈剂.webp" alt="生锈剂.jpg">
           <span class="tag">产品素材</span>
           <span class="title">生锈剂</span>
         </a><a class="card" href="assets/产品-碳钢刀.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-碳钢刀.jpg" alt="碳钢刀.jpg">
+          <img loading="lazy" src="assets/产品-碳钢刀.webp" alt="碳钢刀.jpg">
           <span class="tag">产品素材</span>
           <span class="title">碳钢刀</span>
         </a><a class="card" href="assets/产品-超大块猪肉.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-超大块猪肉.jpg" alt="超大块猪肉.jpg">
+          <img loading="lazy" src="assets/产品-超大块猪肉.webp" alt="超大块猪肉.jpg">
           <span class="tag">产品素材</span>
           <span class="title">超大块猪肉</span>
         </a><a class="card" href="assets/产品-陶瓷刀.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-陶瓷刀.jpg" alt="陶瓷刀.jpg">
+          <img loading="lazy" src="assets/产品-陶瓷刀.webp" alt="陶瓷刀.jpg">
           <span class="tag">产品素材</span>
           <span class="title">陶瓷刀</span>
         </a><a class="card" href="assets/产品-鞋垫子.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-鞋垫子.jpg" alt="鞋垫子.jpg">
+          <img loading="lazy" src="assets/产品-鞋垫子.webp" alt="鞋垫子.jpg">
           <span class="tag">产品素材</span>
           <span class="title">鞋垫子</span>
         </a><a class="card" href="assets/产品-鸡骨剪.jpg" target="_blank">
-          <img loading="lazy" src="assets/产品-鸡骨剪.jpg" alt="鸡骨剪.jpg">
+          <img loading="lazy" src="assets/产品-鸡骨剪.webp" alt="鸡骨剪.jpg">
           <span class="tag">产品素材</span>
           <span class="title">鸡骨剪</span>
         </a><a class="card" href="assets/人物-倩倩.jpg" target="_blank">
-          <img loading="lazy" src="assets/人物-倩倩.jpg" alt="倩倩.jpg">
+          <img loading="lazy" src="assets/人物-倩倩.webp" alt="倩倩.jpg">
           <span class="tag">角色形象</span>
           <span class="title">倩倩</span>
         </a><a class="card" href="assets/人物-光明人物图、中年.jpg" target="_blank">
-          <img loading="lazy" src="assets/人物-光明人物图、中年.jpg" alt="光明人物图、中年.jpg">
+          <img loading="lazy" src="assets/人物-光明人物图、中年.webp" alt="光明人物图、中年.jpg">
           <span class="tag">角色形象</span>
           <span class="title">光明人物图、中年</span>
         </a><a class="card" href="assets/人物-虚拟女可爱、少女、名字：刀妹.jpg" target="_blank">
-          <img loading="lazy" src="assets/人物-虚拟女可爱、少女、名字：刀妹.jpg" alt="虚拟女可爱、少女、名字：刀妹.jpg">
+          <img loading="lazy" src="assets/人物-虚拟女可爱、少女、名字：刀妹.webp" alt="虚拟女可爱、少女、名字：刀妹.jpg">
           <span class="tag">角色形象</span>
           <span class="title">虚拟女可爱、少女、名字：刀妹</span>
         </a></div>
@@ -480,6 +552,18 @@ if (!('IntersectionObserver' in window)) {
   },{threshold:0.08});
   revealEls.forEach(el=>{ el.classList.add('reveal'); io.observe(el); });
 }
+// 视频库：点击封面加载播放（不点不加载视频，省流量加速）
+document.querySelectorAll('.video-card').forEach(card=>{
+  card.addEventListener('click', ()=>{
+    if (card.querySelector('video')) return;
+    const v = document.createElement('video');
+    v.controls = true; v.autoplay = true; v.playsInline = true;
+    v.src = card.dataset.video; v.poster = card.dataset.poster;
+    const img = card.querySelector('img');
+    if (img) img.replaceWith(v);
+    const pb = card.querySelector('.playbtn'); if (pb) pb.remove();
+  });
+});
 // 滚动时头部内容渐隐（背景淡化过渡）
 const hdr = document.querySelector('header');
 window.addEventListener('scroll', ()=>{
