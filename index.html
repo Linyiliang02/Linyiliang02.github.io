@@ -26,9 +26,9 @@ body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
 header { text-align:center; padding:64px 20px 56px; color:#fff; position:relative; overflow:hidden;
   background:linear-gradient(135deg,#8b5cf6 0%,#a78bfa 25%,#818cf8 50%,#60a5fa 78%,#c7d2fe 100%);
   background-size:220% 220%; animation:gradFlow 14s ease infinite; transition:opacity .4s ease; }
-/* 底部过渡带：辉光→淡化到页面背景 */
-header::after { content:""; position:absolute; left:0; right:0; bottom:0; height:90px; pointer-events:none;
-  background:linear-gradient(180deg, rgba(199,210,254,0) 0%, rgba(199,210,254,.5) 38%, rgba(247,244,255,.94) 100%); }
+/* 底部过渡带：header 颜色完全渐变融入背景色（直角边缘无线） */
+header::after { content:""; position:absolute; left:0; right:0; bottom:0; height:140px; pointer-events:none;
+  background:linear-gradient(180deg, rgba(199,210,254,0) 0%, rgba(247,244,255,.62) 55%, rgba(247,244,255,1) 100%); }
 /* 顶部柔光 */
 header::before { content:""; position:absolute; left:50%; top:-140px; width:520px; height:280px;
   transform:translateX(-50%); border-radius:50%; pointer-events:none;
