@@ -89,7 +89,27 @@ main { max-width:1100px; margin:0 auto; padding:0 20px 60px; position:relative; 
 .reveal.show { opacity:1; transform:translateY(0); }
 
 footer { text-align:center; color:#94a3b8; font-size:12px; padding:30px 20px 50px; position:relative; z-index:1; }
-@media (max-width:720px) { .cgrid { grid-template-columns:1fr; } }
+/* ===== 手机优化 ===== */
+@media (max-width:720px) {
+  .glow { opacity:.22; }            /* 光斑减淡省电 */
+  .glow-a,.glow-b,.glow-c { animation:none; }  /* 手机禁浮动动画，防卡顿 */
+  header { padding:44px 16px 40px; }
+  h1 { font-size:23px; letter-spacing:2px; }
+  .avatar { width:88px; height:88px; }
+  .badge { padding:4px 10px; font-size:11px; }
+  .cgrid { grid-template-columns:1fr; gap:18px; }
+  .grid { grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:10px; }
+  .card .title { font-size:11.5px; padding:6px 8px; }
+  .card .tag { font-size:10px; padding:2px 7px; }
+  .cinfo { padding:12px 14px 16px; }
+  .cinfo h3 { font-size:14px; }
+  .cinfo p { font-size:12.5px; line-height:1.7; }
+  main { padding:0 14px 48px; }
+  .group { margin-top:40px; }
+  .group h2 { font-size:15.5px; }
+  * { -webkit-tap-highlight-color:transparent; }
+  .card:active { transform:scale(.97); }   /* 触屏点击反馈 */
+}
 </style>
 </head>
 <body>
